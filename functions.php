@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 600; /* pixels */
 }
 
 if ( ! function_exists( 'my_simone_setup' ) ) :
@@ -38,7 +38,7 @@ function my_simone_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -49,10 +49,10 @@ function my_simone_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'my_simone_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+//	add_theme_support( 'custom-background', apply_filters( 'my_simone_custom_background_args', array(
+//		'default-color' => 'ffffff',
+//		'default-image' => '',
+//	) ) );
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array(
@@ -60,6 +60,7 @@ function my_simone_setup() {
 		'search-form',
 		'comment-form',
 		'gallery',
+                'caption',
 	) );
 }
 endif; // my_simone_setup
@@ -86,7 +87,11 @@ add_action( 'widgets_init', 'my_simone_widgets_init' );
 function my_simone_scripts() {
 	wp_enqueue_style( 'my-simone-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'my-simone-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_style('my-simone-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,900italic|PT+Serif:400,400italic,700,700italic');
+        
+        wp_enqueue_style('my-simone-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+            
+        wp_enqueue_script( 'my-simone-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'my-simone-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -99,7 +104,7 @@ add_action( 'wp_enqueue_scripts', 'my_simone_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
