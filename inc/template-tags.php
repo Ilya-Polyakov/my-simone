@@ -82,16 +82,16 @@ function my_simone_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'my-simone' ),
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
-			$time_string
-		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
-		)
-	);
+                    printf( __( '<span class="byline">Written by %1$s</span><span class="posted-on">%2$s</span>', 'my-simone' ),
+                        sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+                            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+                            esc_html( get_the_author() )
+                        ),
+                            sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+                            esc_url( get_permalink() ),
+                            $time_string
+                        )
+                    );
 }
 endif;
 
