@@ -87,7 +87,9 @@ add_action( 'widgets_init', 'my_simone_widgets_init' );
 function my_simone_scripts() {
 	wp_enqueue_style( 'my-simone-style', get_stylesheet_uri() );
 
-	wp_enqueue_style('my-simone-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,900italic|PT+Serif:400,400italic,700,700italic');
+	wp_enqueue_style( 'my-simone-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css');
+        
+        wp_enqueue_style('my-simone-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,900italic|PT+Serif:400,400italic,700,700italic');
         
         wp_enqueue_style('my-simone-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
             
