@@ -54,6 +54,13 @@
                                                         <?php my_simone_social_menu(); ?>
                         
 		</nav><!-- #site-navigation -->
+                
+                                    <div id="search-container" class="search-box-wrapper clear">
+                                        <div class="search-box clear">
+                                            <?php get_search_form(); ?>
+                                        </div>
+                                    </div> <!-- search-container-->
+                
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
