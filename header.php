@@ -23,16 +23,23 @@
 
 	<header id="masthead" class="site-header" role="banner">
             
-                        <?php if ( get_header_image() ) : ?>
+                        <?php if ( get_header_image()  && ('blank' == get_header_textcolor()) ) : ?>
                           <div class ="header-image">
                                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                                         <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
                                 </a>
                           </div>
                         <?php endif; // End header image check. ?>            
+                        
+                        <?php 
+                            if ( get_header_image() && !('blank' == get_header_textcolor()) ) { 
+                                echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">'; 
+                            } else {
+                                echo '<div class="site-branding">';
+                            }
+                        ?>
             
-                        <div class="site-branding">
-                            <div class="title-box">
+                                <div class="title-box">
                                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                             </div>
