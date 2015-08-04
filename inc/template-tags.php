@@ -52,15 +52,17 @@ function my_simone_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'my-simone' ); ?></h1>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'my-simone' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'my-simone' ) );
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
+                        <nav class="navigation post-navigation" role="navigation">
+                            <div class="post-nav-box clear">
+                                <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'my-simone' ); ?></h1>
+                                <div class="nav-links">
+                                    <?php
+                                    previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
+                                    next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
+                                    ?>
+                                </div><!-- .nav-links -->
+                            </div><!-- .post-nav-box -->
+                        </nav><!-- .navigation -->
 	<?php
 }
 endif;
