@@ -16,57 +16,41 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php
-						if ( is_category() ) :
-							single_cat_title();
+					
+                                                                            <?php
+                                                                            if ( is_category() ) :
+                                                                                printf( __( 'Posts in the ', 'my-simone' ) );
+                                                                                echo '<em>';
+                                                                                single_cat_title();
+                                                                                echo '</em> ' . __('category', 'my-simone') . ':';
 
-						elseif ( is_tag() ) :
-							single_tag_title();
+                                                                            elseif ( is_tag() ) :
+                                                                                printf( __( 'Posts with the ', 'my-simone' ) );
+                                                                                echo '<em>';
+                                                                                single_tag_title();
+                                                                                echo '</em> ' . __('tag', 'my-simone') . ':';
 
-						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'my-simone' ), '<span class="vcard">' . get_the_author() . '</span>' );
+                                                                            elseif ( is_author() ) :
+                                                                                printf( __( 'Author: %s', 'my-simone' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
-						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'my-simone' ), '<span>' . get_the_date() . '</span>' );
+                                                                            elseif ( is_day() ) :
+                                                                                printf( __( 'Posts from %s', 'my-simone' ), '<span>' . get_the_date() . '</span>' );
 
-						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'my-simone' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'my-simone' ) ) . '</span>' );
+                                                                            elseif ( is_month() ) :
+                                                                                printf( __( 'Posts from %s', 'my-simone' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'my-simone' ) ) . '</span>' );
 
-						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'my-simone' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'my-simone' ) ) . '</span>' );
+                                                                            elseif ( is_year() ) :
+                                                                                printf( __( 'Posts from %s', 'my-simone' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'my-simone' ) ) . '</span>' );
 
-						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'my-simone' );
+                                                                            elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+                                                                                _e( 'Asides', 'my-simone' );
 
-						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'my-simone');
+                                                                            else :
+                                                                                _e( 'Archives', 'my-simone' );
 
-						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'my-simone');
+                                                                            endif;
+                                                                            ?>
 
-						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'my-simone' );
-
-						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'my-simone' );
-
-						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'my-simone' );
-
-						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'my-simone' );
-
-						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'my-simone' );
-
-						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'my-simone' );
-
-						else :
-							_e( 'Archives', 'my-simone' );
-
-						endif;
-					?>
 				</h1>
 				<?php
 					// Show an optional term description.
