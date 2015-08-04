@@ -39,8 +39,16 @@
                         ?>
                         <?php edit_post_link( __( ' | Edit', 'my-simone' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+		<?php endif; ?>	
+                        
+                        <?php
+                        // Display a thumb tack in the top right hand corner if this post is sticky
+                        if (is_sticky()) {
+                            echo '<i class="fa fa-thumb-tack sticky-post"></i>';
+                        }
+                        ?>
+
+                </header><!-- .entry-header -->
 
 	
 	<div class="entry-content">

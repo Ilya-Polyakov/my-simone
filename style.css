@@ -1222,6 +1222,7 @@ input[type="search"] {
 
 .sticky {
 }
+
 .hentry {
 	margin: 0 0 1.5em;
 }
@@ -1333,6 +1334,10 @@ blockquote.alignright {
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
+}
+
+.format-aside .entry-content {
+    margin-top: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -1473,7 +1478,12 @@ ol.children { list-style-type: none; }
 
 .continue-reading i { margin-left: .5em; }
 
-
+.sticky-post {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+}
+      
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
