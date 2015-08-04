@@ -40,6 +40,7 @@ and Blueprint http://www.blueprintcss.org/
 	10.1 - Posts and pages
 	10.2 - Asides
 	10.3 - Comments
+                 10.4 - Index
 11.0 - Infinite scroll
 12.0 - Media
 --------------------------------------------------------------*/
@@ -1432,6 +1433,22 @@ ol.children { list-style-type: none; }
     background: hsl(100, 39%, 57%);
 }
      
+
+/*--------------------------------------------------------------
+10.4 Index
+    Index and Archive
+--------------------------------------------------------------*/
+
+.continue-reading {
+    margin: 0 4rem;
+    font-weight: 900;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+.continue-reading i { margin-left: .5em; }
+
+
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
