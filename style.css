@@ -1370,8 +1370,14 @@ ol.children { list-style-type: none; }
     font-size: 1.4rem;
 }
 
-.bypostauthor{}
-
+.bypostauthor > .comment-body {
+    position: relative;
+    padding: 1em;
+    margin-bottom: 2em;
+    background: hsl(0, 0%, 93%);
+    border: none;
+}
+   
 /* Comments responsive */
 @media screen and (max-width:600px) {    
     .comment-list ol { margin-left: 0; }
