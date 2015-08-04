@@ -4,8 +4,17 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
+
+        <?php 
+            if (has_post_thumbnail()) {
+                echo '<div class="single-post-thumbnail clear">';
+                echo the_post_thumbnail('large-thumb');
+                echo '</div>';
+            }
+        ?>
+
+        <header class="entry-header">
                                     
                                     <?php
                                         /* translators: used between list items, there is a space after the comma */
