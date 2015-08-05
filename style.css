@@ -1046,6 +1046,11 @@ input[type="search"] {
 --------------------------------------------------------------*/
 
 /* Typography */
+
+.page .entry-title {
+    margin-top: .7em;
+}
+
 .entry-title {
     margin: 0 0 2rem;
     font-weight: 900;
@@ -1055,8 +1060,6 @@ input[type="search"] {
     color: #000;
     color: hsl(0, 0%, 0%);
 }
-
-
 
 .entry-content a { 
     text-decoration: underline; 
